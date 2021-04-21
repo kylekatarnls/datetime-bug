@@ -1,10 +1,7 @@
 <?php
 
-$dtToronto = new DateTime('2012-01-01 00:00:00.000000', new DateTimeZone('America/Toronto'));
-$dtVancouver = new DateTime('2012-01-01 00:00:00.000000', new DateTimeZone('America/Vancouver'));
-
-$dtToronto->modify('+2012 years');
-$dtVancouver->modify('+2012 years');
+$dtToronto = new DateTime('2012-01-01 00:00:00.000000 America/Toronto');
+$dtVancouver = new DateTime('2012-01-01 00:00:00.000000 America/Vancouver');
 
 $diff = $dtVancouver->diff($dtToronto);
 
