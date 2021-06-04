@@ -1,12 +1,8 @@
 <?php
 
-$dtToronto = new DateTime('2012-01-01 00:00:00.000000 America/Toronto');
-$dtVancouver = new DateTime('2012-01-01 00:00:00.000000 America/Vancouver');
+$greater = (new DateTimeImmutable('2000-12-31 23:59:59.999999'))->setDate(PHP_INT_MAX, 12, 31) >
+    new DateTimeImmutable('2019-01-26 10:30:12.000000');
 
-$diff = $dtVancouver->diff($dtToronto);
+var_dump($greater);
 
-var_dump($diff);
-
-$hours = $diff->format('%h');
-
-exit($hours === '3' ? 0 : 1);
+exit($greater ? 0 : 1);
